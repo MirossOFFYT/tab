@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/xp.css"
+>
+<style>
+    body {
+    background-image: url('https://static.actu.fr/uploads/2021/03/13807881863-639a90e969-o.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#mobile-blocker {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 9999;
+    }
+
+    #mobile-blocker a {
+      margin-top: 20px;
+      color: #00d5ff;
+      background: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+</style>
+</head>
+<body>
+<div id="mobile-blocker" style="display: none;">
+    <h2>Version mobile détectée</h2>
+    <p>Veuillez visiter la version mobile du site.</p>
+    <a href="m.html">Accéder à la version mobile</a>
+  </div>
+
+    <div class="window">
+  <div class="title-bar">
+    <div class="title-bar-text">Command Prompt - Administrator - Signabroam TAB</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+    <pre>Microsoft&#10094;R&#10095; Windows DOS 
+&#10094;C&#10095; Copyright Microsoft Corp 1990-2001.
+      <br>C:&#92;WINDOWS&#92;SYSTEM32> start signabroam.exe & echo off
+    <br><br>  - Welcome to the Signabroam TAB!
+   <br> - Choose the website you want to go:
+    <ul>
+        <li><a href="http://signabroam.ovh">Home page</a></li>
+        <li><a href="http://alisdr.signabroam.ovh">Alisdr</a></li>
+        <li><a href="http://autoreload.signabroam.ovh">Autoreload by Signabroam</a></li>
+        <li><a href="http://rx.signabroam.ovh">Signabroam radio related world map</a></li>
+        <li>More soon!</li>
+    </ul>
+
+    <footer>Note: when you enter one of these link you are in HTTPS so most of the functions may not work, to fix this open you're navigation bar and edit from HTTPS to HTTP.</footer>
+
+    <br>C:&#92;WINDOWS&#92;SYSTEM32> <input name="SYSTEM32" id="c32" style="background-color: transparent; border: none; color: white; width: 80vw;" type="text"></textarea>
+    </pre>
+  </div>
+</div>
+</body>
+<script>
+    const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      // Bloque tout le contenu de la page
+      document.body.innerHTML = ''; 
+      document.body.appendChild(document.getElementById('mobile-blocker'));
+      document.getElementById('mobile-blocker').style.display = 'flex';
+    }
+  </script>
+</html>
